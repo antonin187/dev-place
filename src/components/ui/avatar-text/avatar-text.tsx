@@ -36,7 +36,7 @@ export default function AvatarText({
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <div className="flex items-center gap-2 w-fit">
+        <div className="flex items-center gap-2 w-fit hover:cursor-pointer">
           <Avatar className="w-10 h-10">
             <AvatarImage src={imgLink} />
             <AvatarFallback>{fallback}</AvatarFallback>
