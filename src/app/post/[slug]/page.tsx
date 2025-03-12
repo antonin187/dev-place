@@ -155,7 +155,7 @@ const printMyBlock = (block: Blocktype, index: number) => {
         </h3>
       );
     case "paragraph":
-      return <div key={index} className="text-xs sm:text-lg" >{renderBlockContent(block.content.text || undefined)}</div>;
+      return <div key={index} className="sm:text-lg" >{renderBlockContent(block.content.text || undefined)}</div>;
     case "code":
       return (
         <div key={index} className="rounded-lg overflow-hidden">

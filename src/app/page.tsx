@@ -32,7 +32,7 @@ export default function Home() {
             dev-place
           </h1>
         </div>
-        <h2 className="text-muted-foreground text-xl flex flex-col items-center gap-2 text-center">
+        <h2 className="text-muted-foreground text-xl flex flex-col items-center gap-2 text-center px-3 sm:px-0">
           Vous trouverez des articles divers et variés autour du développement
           informatique.
         </h2>
