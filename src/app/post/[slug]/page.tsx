@@ -72,7 +72,8 @@ export default async function PostPage({
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{window.innerWidth <= 768 && post.name.length > 42 ? `${post.name.substring(0, 42)}...` : post.name}</BreadcrumbPage>
+          <BreadcrumbPage className="block sm:hidden">{post.name.length > 42 ? `${post.name.substring(0, 42)}...` : post.name}</BreadcrumbPage>
+          <BreadcrumbPage className="hidden sm:block">{post.name}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
