@@ -94,14 +94,6 @@ export default async function PostPage({
             {post.name}
           </h1>
           <h2 className="text-muted-foreground">{post.description}</h2>
-        <Image
-          id="img-mobile"
-          src={post.cover}
-          alt="Javascript code"
-          layout="fill"
-          objectFit="cover"
-          className="w-full rounded-lg sm:hidden"
-        />
         <img
 
            id="img-mobile"
