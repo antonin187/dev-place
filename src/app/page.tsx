@@ -1,12 +1,25 @@
+"use client"
+import { useEffect, useState } from 'react';
 import { getPublishedPosts, getRecentPosts } from "@/api-call/posts";
 import { Button } from "@/components/ui/button";
 import PostCard from "@/components/ui/post-card/post-card";
 import { PostType } from "@/types/post";
 import { Glasses } from "lucide-react";
 
-export default async function Home() {
-  const posts = await getPublishedPosts();
-  const recentPosts = await getRecentPosts();
+export default function Home() {
+  const [posts, setPosts] = useState<PostType[]>([]);
+  const [recentPosts, setRecentPosts] = useState<PostType[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const publishedPosts = await getPublishedPosts();
+      const recentPostsData = await getRecentPosts();
+      setPosts(publishedPosts);
+      setRecentPosts(recentPostsData);
+    };
+
+    fetchPosts();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-customGrey via-30% to-customGrey">

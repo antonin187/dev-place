@@ -24,10 +24,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Annotations, Blocktype, TextBlock } from "@/types/post";
 
-type PostPageParams = {
-  slug: string;
-};
-
 export async function generateMetadata({
   params,
 }: {
