@@ -72,7 +72,7 @@ export default async function PostPage({
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{post.name}</BreadcrumbPage>
+            <BreadcrumbPage>{post.name.length > 42 ? `${post.name.substring(0, 42)}...` : post.name}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
