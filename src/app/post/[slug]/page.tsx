@@ -105,7 +105,7 @@ export default async function PostPage({
             <p className="text-muted-foreground text-xs">
               Publié le{" "}
               {post.publishedAt?.start
-                ? new Date(post.publishedAt.start).toLocaleDateString()
+                ? new Date(post.publishedAt.start).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit', day: '2-digit' })
                 : ""}
             </p>
             <AvatarText
