@@ -1,3 +1,4 @@
+import { PostType } from "@/types/post";
 import axios from "axios";
 
 export async function getPublishedPosts() {

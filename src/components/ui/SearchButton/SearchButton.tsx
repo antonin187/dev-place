@@ -1,33 +1,22 @@
 "use client";
-import {
-  Calculator,
-  Calendar,
-  CreditCard,
-  Home,
-  Settings,
-  Smile,
-  Star,
-  User,
-} from "lucide-react";
+import { Home } from "lucide-react";
 import {
   CommandDialog,
-  CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
 } from "../command";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { DialogTitle } from "../dialog";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { getPublishedPosts } from "@/api-call/posts";
 import { Skeleton } from "../skeleton";
 import { useRouter } from "next/navigation";
-import { Separator } from "../separator";
 import { Badge } from "../badge";
 import { colorTagClasses, colorTags } from "@/utils/color";
+import { PostType } from "@/types/post";
 
 export default function SearchButton() {
   const [open, setOpen] = useState(false);
@@ -52,10 +41,10 @@ export default function SearchButton() {
     }
   };
 
-  const openTheCommand = () => {
+  const openTheCommand = useCallback(() => {
     fetchPosts();
     setOpen((open) => !open);
-  };
+  }, []);
 
   const handleSelect = (slug: string) => {
     router.push(slug);
@@ -69,9 +58,9 @@ export default function SearchButton() {
         <>
           {[...Array(3)].map((_, index) => (
             <CommandItem key={index} className="flex flex-col items-start">
-                <Skeleton className="h-8 w-[250px]" />
-                <Skeleton className="h-2 w-full" />
-                <Skeleton className="h-2 w-2/3" />
+              <Skeleton className="h-8 w-[250px]" />
+              <Skeleton className="h-2 w-full" />
+              <Skeleton className="h-2 w-2/3" />
             </CommandItem>
           ))}
         </>
@@ -86,16 +75,16 @@ export default function SearchButton() {
           >
             <span className="text-base">{post.name}</span>
             <div className="flex gap-1">
-            {post.propertyTags.map((tag, index) => (
-              <Badge
-                key={index}
-                className={colorTagClasses[colorTags[tag.toLowerCase()]]}
-                variant={"small"}
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
+              {post.propertyTags.map((tag, index) => (
+                <Badge
+                  key={index}
+                  className={colorTagClasses[colorTags[tag.toLowerCase()]]}
+                  variant={"small"}
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
           </CommandItem>
         ));
       } else {
@@ -114,7 +103,7 @@ export default function SearchButton() {
 
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [openTheCommand]);
 
   return (
     <>
@@ -140,11 +129,8 @@ export default function SearchButton() {
         <CommandList>
           <CommandGroup heading="Raccourcis">
             <CommandItem onSelect={() => handleSelect("/")}>
-              <Home /> <span className="text-base">Revenir à l'accueil</span>
+              <Home /> <span className="text-base">Revenir à l&apos;accueil</span>
             </CommandItem>
-            {/* <CommandItem>
-              <Star /> Voir mes favoris
-            </CommandItem> */}
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Tous les articles">

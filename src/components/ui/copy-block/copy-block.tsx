@@ -1,6 +1,6 @@
 "use client";
 
-import { CodeBlock, CopyBlock, dracula } from "react-code-blocks";
+import { CodeBlock, dracula } from "react-code-blocks";
 import { useEffect, useState } from "react";
 import { Skeleton } from "../skeleton";
 

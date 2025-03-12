@@ -8,7 +8,6 @@ import {
   colorTags,
   colorTextClasses,
 } from "@/utils/color";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import AvatarText from "@/components/ui/avatar-text/avatar-text";
 import {
   Breadcrumb,
@@ -20,15 +19,22 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import NotFoundPost from "../../../views/NotFoundPost/NotFoundPost";
-import { ChevronRight, Home } from "lucide-react";
+import { Home } from "lucide-react";
 import { Metadata } from "next";
+import Image from "next/image";
+import { Annotations, Blocktype, TextBlock } from "@/types/post";
+
+type PostPageParams = {
+  slug: string;
+};
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const post = await getPost(params.slug);
+  const { slug } = await params
+  const post = await getPost(slug);
 
   if (!post) {
     return {
@@ -46,9 +52,10 @@ export async function generateMetadata({
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>
 }) {
-  const post = await getPost(params.slug);
+  const { slug } = await params
+  const post = await getPost(slug);
 
   // ⛔ Si le post n'existe pas, on affiche un message d'erreur
   if (!post) {
@@ -91,11 +98,13 @@ export default async function PostPage({
             {post.name}
           </h1>
           <h2 className="text-muted-foreground">{post.description}</h2>
-        <img
+        <Image
           id="img-mobile"
           src={post.cover}
-          className="object-cover h-80 w-full rounded-lg sm:hidden"
           alt="Javascript code"
+          layout="fill"
+          objectFit="cover"
+          className="w-full rounded-lg sm:hidden"
         />
           <div className="w-full flex flex-col gap-4">
             <p className="text-muted-foreground text-xs">
@@ -151,12 +160,12 @@ const printMyBlock = (block: Blocktype, index: number) => {
         </h3>
       );
     case "paragraph":
-      return <div key={index} className="text-xs sm:text-lg" >{renderBlockContent(block.content.text)}</div>;
+      return <div key={index} className="text-xs sm:text-lg" >{renderBlockContent(block.content.text || undefined)}</div>;
     case "code":
       return (
         <div key={index} className="rounded-lg overflow-hidden">
           <CustomCodeBlock
-            code={block.content.text?.[0]?.plain_text!}
+            code={block.content.text?.[0]?.plain_text || ""}
             language="javascript"
           />
         </div>

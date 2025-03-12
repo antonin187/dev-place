@@ -1,8 +1,8 @@
 import { getPublishedPosts, getRecentPosts } from "@/api-call/posts";
 import { Button } from "@/components/ui/button";
 import PostCard from "@/components/ui/post-card/post-card";
-import axios from "axios";
-import { Donut, GithubIcon, Glasses } from "lucide-react";
+import { PostType } from "@/types/post";
+import { Glasses } from "lucide-react";
 
 export default async function Home() {
   const posts = await getPublishedPosts();

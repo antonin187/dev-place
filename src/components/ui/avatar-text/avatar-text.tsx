@@ -13,6 +13,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../drawer";
+import Image from "next/image";
 
 // Define the props interface
 interface AvatarTextProps {
@@ -49,7 +50,7 @@ export default function AvatarText({
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
-            <img src={imgLink} />
+          <img src={imgLink} />
             <DrawerTitle className="text-center text-4xl">
               {fullName}
             </DrawerTitle>

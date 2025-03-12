@@ -5,7 +5,6 @@ import { Button } from "../button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -13,6 +12,8 @@ import {
 import { generateSlug } from "@/utils/functions";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
+import Image from "next/image";
+import { PostType } from "@/types/post";
 
 // Define the props interface
 interface PostCardProps {
@@ -35,10 +36,10 @@ export default function PostCard({ post, className }: PostCardProps) {
 
       {/* Carte ShadCN */}
       <Card
-        className={`flex flex-col relative z-10 bg-customGrey hover:bg-white hover:cursor-pointer transition duration-300 shadow-none hover:shadow-sm group-active:scale-[98%] overflow-hidden`}
+        className="flex flex-col relative z-10 bg-customGrey hover:bg-white hover:cursor-pointer transition duration-300 shadow-none hover:shadow-sm group-active:scale-[98%] overflow-hidden"
       >
         <CardHeader className="flex-grow">
-          <img src={post.cover} className="h-40 rounded-lg object-cover mb-5" />
+        <img src={post.cover} className="h-40 rounded-lg object-cover mb-5" />
           <CardTitle className="font-bold text-3xl w-full truncate">
             {post.name}
           </CardTitle>

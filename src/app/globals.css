@@ -1,25 +1,10 @@
-@font-face {
-  font-family: 'Cascadia';
-  src: url('/app/assets/fonts/Cascadia/Cascadia.woff2') format('woff2'),
-       url('/app/assets/fonts/Cascadia/Cascadia.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Syne';
-  src: url('/app/assets/fonts/Syne/Syne.woff2') format('woff2'),
-       url('/app/assets/fonts/Syne/Syne.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @layer base {
@@ -93,12 +78,12 @@ body {
   inherits: false;
 }
 
-.conicGradient::after, .conicGradient::before {
-  content: '';
+.conicGradient::after,
+.conicGradient::before {
+  content: "";
   position: absolute;
   height: 100%;
   width: 100%;
-  /* background: conic-gradient(from var(--angle),#ff4545, #00ff99, #006aff, #ff0095); */
   background: conic-gradient(from var(--angle), transparent 70%, #171717);
   top: 50%;
   left: 50%;

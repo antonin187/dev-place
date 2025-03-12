@@ -1,4 +1,4 @@
-type PostType = {
+export type PostType = {
   id: string;
   notionId: string;
   blocks: Blocktype[];
@@ -12,13 +12,13 @@ type PostType = {
   slug: string;
 };
 
-type PublishedAt = {
+export type PublishedAt = {
   start?: string | null;
   end?: string | null;
   time_zone?: string | null;
 };
 
-type Blocktype =
+export type Blocktype =
   | { type: "heading_1"; content: HeadingContent }
   | { type: "heading_2"; content: HeadingContent }
   | { type: "heading_3"; content: HeadingContent }
@@ -31,48 +31,48 @@ type Blocktype =
   | { type: "code"; content: CodeContent }
   | { type: "divider"; content: DividerContent };
 
-type HeadingContent = {
+export type HeadingContent = {
   is_toggleable?: boolean;
   color?: string;
   text?: TextBlock[];
 };
 
-type ParagraphContent = {
+export type ParagraphContent = {
   color?: string;
   text?: TextBlock[];
 };
 
-type ListContent = {
+export type ListContent = {
   color?: string;
   text?: TextBlock[];
 };
 
-type CalloutContent = {
+export type CalloutContent = {
   icon?: { type: string; emoji?: string };
   color?: string;
   text?: TextBlock[];
 };
 
-type QuoteContent = {
+export type QuoteContent = {
   color?: string;
   text?: TextBlock[];
 };
 
-type TableContent = {
+export type TableContent = {
   table_width: number;
   has_column_header: boolean;
   has_row_header: boolean;
 };
 
-type CodeContent = {
+export type CodeContent = {
   caption?: string[];
   language?: string;
   text?: TextBlock[];
 };
 
-type DividerContent = Record<string, never>; // Objet vide pour éviter TypeScript errors
+export type DividerContent = Record<string, never>; // Objet vide pour éviter TypeScript errors
 
-type TextBlock = {
+export type TextBlock = {
   type: string;
   text: { content: string; link?: { url?: string } | null };
   annotations: {
@@ -87,7 +87,7 @@ type TextBlock = {
   href?: string | null;
 };
 
-type Annotations = {
+export type Annotations = {
   bold: boolean;
   italic: boolean;
   strikethrough: boolean;

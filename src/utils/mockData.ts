@@ -1,3 +1,5 @@
+import { PostType } from "@/types/post";
+
 export const mockPosts: PostType[] = [
   {
     publishedAt: { start: "2025-01-26", end: null, time_zone: null },

@@ -13,7 +13,7 @@ export default function NotFoundPost() {
       <h1 className="text-4xl sm:text-6xl tracking-tighter font-semibold text-center">
         Article introuvable
       </h1>
-      <Button onClick={handleClick}>Revenir à l'accueil</Button>
+      <Button onClick={handleClick}>Revenir à l&apos;accueil</Button>
     </section>
   );
 }

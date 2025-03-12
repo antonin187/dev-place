@@ -1,13 +1,12 @@
 "use client";
-import { Donut, GithubIcon, Instagram, Linkedin } from "lucide-react";
+import { GithubIcon, Instagram, Linkedin } from "lucide-react";
 import { Button } from "../button";
-import { Separator } from "../separator";
 
 export default function Footer() {
   return (
     <footer className="flex flex-col justify-center bg-white items-center border mt-6">
       <section className="flex flex-col w-full h-full pt-8 sm:pt-16 px-4 sm:px-28 gap-6 sm:gap-4">
-        <p className="text-4xl sm:text-6xl tracking-tighter font-semibold w-full text-center sm:text-left">C'est la fin.</p>
+        <p className="text-4xl sm:text-6xl tracking-tighter font-semibold w-full text-center sm:text-left">C&apos;est la fin.</p>
         <p className="text-justify sm:text-left text-sm sm:text-lg">
           Développeur fullstack passionné, étudiant et créateur de ce blog. Ici,
           je partage mes connaissances et découvertes en développement
