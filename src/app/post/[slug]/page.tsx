@@ -102,6 +102,13 @@ export default async function PostPage({
           objectFit="cover"
           className="w-full rounded-lg sm:hidden"
         />
+        <img
+
+           id="img-mobile"
+           className="object-cover h-80 w-full rounded-lg sm:hidden"
+           src={post.cover}
+           alt="Post Cover"
+         />
           <div className="w-full flex flex-col gap-4">
             <p className="text-muted-foreground text-xs">
               Publié le{" "}
@@ -121,7 +128,7 @@ export default async function PostPage({
           id="img-web"
           src={post.cover}
           className="object-cover h-80 w-2/5 rounded-lg hidden sm:block"
-          alt="Javascript code"
+          alt="Post Cover"
         />
       </div>
       <Separator className="sm:hidden" />
