@@ -84,6 +84,7 @@ export const colorTags: { [key: string]: string } = {
 
   // 🟢 Green color
   mongodb: "green",
+  android: "green",
 
   // 🟠 Orange color
   swift: "orange",
@@ -94,6 +95,7 @@ export const colorTags: { [key: string]: string } = {
 
   // 🟣 Fuchsia color
   graphql: "fuchsia",
+  kotlin: "fuchsia",
 
   // 🟡 Yellow color
   firebase: "yellow",
