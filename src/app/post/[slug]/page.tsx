@@ -193,7 +193,7 @@ const printMyBlock = (block: Blocktype, index: number) => {
           key={index}
           className={`${
             colorCalloutClasses[block.content.color!]
-          } p-5 flex gap-4 rounded-sm`}
+          } p-5 flex gap-4 rounded-sm sm:text-lg`}
         >
           <div>{block.content.icon?.emoji}</div>
           <div>{renderBlockContent(block.content.text)}</div>
