@@ -40,6 +40,7 @@ export const colorTags: { [key: string]: string } = {
   // 🔵 Indigo color
   devops: "indigo",
   prisma: "indigo",
+  reactnative: "sky",
 
   // ⚪ Stone color
   github: "stone",
