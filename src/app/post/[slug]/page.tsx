@@ -200,8 +200,9 @@ const printMyBlock = (block: Blocktype, index: number) => {
         </div>
       );
     case "bulleted_list_item":
+      return <li key={index} className="sm:text-lg">{renderBlockContent(block.content.text)}</li>;
     case "numbered_list_item":
-      return <li key={index}>{renderBlockContent(block.content.text)}</li>;
+      return <li key={index} className="sm:text-lg">{renderBlockContent(block.content.text)}</li>;
 
     case "divider":
       return <Separator key={index} />;
