@@ -79,7 +79,7 @@ export default async function PostPage({
       </Breadcrumb>
       {/* header de post */}
       <div className="flex flex-col sm:flex-row pb-10">
-        <section className="flex flex-col justify-center pr-0 sm:pr-20 gap-5 w-full sm:w-3/5">
+        <section className="flex flex-col justify-center pr-0 sm:pr-20 gap-5 w-full sm:w-4/6">
           <div className="flex gap-1 items-start w-full flex-wrap mt-4 sm:mt-0">
             {post.propertyTags.map((tag: string, index: number) => (
               <Badge
@@ -120,7 +120,7 @@ export default async function PostPage({
         <img
           id="img-web"
           src={post.cover}
-          className="object-cover h-80 w-2/5 rounded-lg hidden sm:block"
+          className="object-cover h-80 w-2/6 rounded-lg hidden sm:block"
           alt="Post Cover"
         />
       </div>
