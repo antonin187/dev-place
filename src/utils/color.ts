@@ -74,6 +74,8 @@ export const colorTags: { [key: string]: string } = {
   kubernetes: "blue",
   postgresql: "blue",
   mysql: "blue",
+  flutter: "blue",
+  dart: "blue",
 
   // ⚫ Slate color
   swiftdata: "slate",
