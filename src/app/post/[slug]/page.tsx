@@ -181,7 +181,7 @@ const printMyBlock = (block: Blocktype, index: number) => {
           }`}
         >
           <div key={index} className="bg-primary w-1" />
-          <p className="flex-grow pr-2 py-2">
+          <p className="flex-grow pr-2 py-2 sm:text-lg">
             {renderBlockContent(block.content.text)}
           </p>
         </div>
