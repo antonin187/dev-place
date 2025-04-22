@@ -52,6 +52,7 @@ export const colorTags: { [key: string]: string } = {
 
   // 🟣 Purple color
   library: "purple",
+  dev: "purple",
 
   // 🌤️ Sky color
   "react.js": "sky",
