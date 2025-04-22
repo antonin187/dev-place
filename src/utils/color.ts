@@ -80,6 +80,7 @@ export const colorTags: { [key: string]: string } = {
 
   // ⚫ Slate color
   swiftdata: "slate",
+  expo: "slate",
 
   // ⚪ Gray color
   ios: "gray",
